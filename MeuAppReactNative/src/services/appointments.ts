@@ -12,11 +12,14 @@
  * @property description - Descrição ou motivo da consulta
  * @property status - Status atual da consulta (agendada, realizada, cancelada)
  */
-export type Appointment = {
+interface Appointment {
     id: string;
+    patientId: string;
+    patientName: string;
     doctorId: string;
+    doctorName: string;
     date: string;
     time: string;
-    description: string;
-    status: string;
-  }; 
+    specialty: string;
+    status: 'pending' | 'confirmed' | 'cancelled';
+  }
